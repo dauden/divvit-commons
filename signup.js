@@ -1,8 +1,8 @@
 $(function() {
 
    var apiHost = location.host.replace('www.', 'api.');
-   var apiHost = "http://api.dev.divvit.com";
-   var webinarURL = "http://api.dev.divvit.com/api/WebinarTimeSlots/list";
+   var apiHost = "api.staging.divvit.com";
+   var webinarURL = "http://api.staging.divvit.com/api/WebinarTimeSlots/list";
 
    var buildHTMLRadioOptions = function(groupName, data) {
       var html = '';
@@ -43,7 +43,7 @@ $(function() {
       });
 
       // POST request to submit form
-      $.post( /*location.protocol + '//' + */ apiHost + '/api/Merchants/signup', params, null, 'json' )
+      $.post( location.protocol + '//' + apiHost + '/api/Merchants/signup', params, null, 'json' )
       .done(function(data) {
          $('.result-success').fadeIn();
       })
